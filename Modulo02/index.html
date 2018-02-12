@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Página personal de JCGLP</title>
+    <link href="https://fonts.googleapis.com/css?family=Kavivanar|Open+Sans" rel="stylesheet">
+    <style media="screen">
+      h1, h2, h3, h4, h5 {
+        font-family: 'Kavivanar', cursive;
+      }
+
+      body{
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      .main-title{
+        margin: 0 auto;
+        text-align: center;
+      }
+      .second-title{
+
+          text-align: center;
+        background-color: red;
+        border-radius: 26px 26px 26px 26px;
+        -moz-border-radius: 26px 26px 26px 26px;
+        -webkit-border-radius: 26px 26px 26px 26px;
+        border: 0px solid #000000;
+
+      }
+
+      .degradado{
+
+        background: rgba(248,80,50,1);
+        background: -moz-linear-gradient(left, rgba(248,80,50,1) 0%, rgba(246,41,12,1) 14%, rgba(241,111,92,1) 51%, rgba(240,47,23,1) 89%, rgba(231,56,39,1) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(248,80,50,1)), color-stop(14%, rgba(246,41,12,1)), color-stop(51%, rgba(241,111,92,1)), color-stop(89%, rgba(240,47,23,1)), color-stop(100%, rgba(231,56,39,1)));
+        background: -webkit-linear-gradient(left, rgba(248,80,50,1) 0%, rgba(246,41,12,1) 14%, rgba(241,111,92,1) 51%, rgba(240,47,23,1) 89%, rgba(231,56,39,1) 100%);
+        background: -o-linear-gradient(left, rgba(248,80,50,1) 0%, rgba(246,41,12,1) 14%, rgba(241,111,92,1) 51%, rgba(240,47,23,1) 89%, rgba(231,56,39,1) 100%);
+        background: -ms-linear-gradient(left, rgba(248,80,50,1) 0%, rgba(246,41,12,1) 14%, rgba(241,111,92,1) 51%, rgba(240,47,23,1) 89%, rgba(231,56,39,1) 100%);
+        background: linear-gradient(to right, rgba(248,80,50,1) 0%, rgba(246,41,12,1) 14%, rgba(241,111,92,1) 51%, rgba(240,47,23,1) 89%, rgba(231,56,39,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#e73827', GradientType=1 );
+
+      }
+      .galeria{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .galeria img{
+  
+        object-fit: cover;
+        flex-grow: 1;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1 class="main-title">Página personal de JCGLP</h1>
+    <section>
+      Ejemplo de elementos en página html
+    </section>
+
+    <section>
+
+      <h2 class="second-title degradado">Galería</h2>
+      <div class="galeria">
+        <img src="img/camara_300x300.jpg" alt="">
+        <img src="img/camara2_300x300.jpg" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6022xGoKTmRdONzdBbexSWFas6ecZKU5iDScfyFgE4V8WIPPi" alt="">
+
+      </div>
+
+
+    </section>
+
+    <section style="text-align:center;">
+      <h2 class="second-title degradado">VIDEO</h2>
+        <video src="videos/IntroduccionMOOC.mp4" controls preload  >
+
+        </video>
+
+
+
+    </section>
+
+
+  </body>
+</html>
