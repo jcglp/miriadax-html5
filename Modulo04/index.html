@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejemplo</title>
+<meta charset="utf-8">
+
+<script type="text/javascript">
+  var num, acc = 0, op = "";
+
+  function cuadrado()   { num.value *= num.value; }
+  function inverso()   { num.value = 1 / num.value; }
+  function raiz()   { num.value = Math.sqrt( num.value ); }
+  function parte_entera()   {
+    if ( 1===Math.sign(num.value) ) {
+      num.value =  Math.floor(num.value) ;
+    } else {
+      num.value =  Math.ceil(num.value) ;
+    }
+  }
+
+  function mas()   { acc = num.value;  op = "+"; }
+  function menos() { acc = num.value;  op = "-"; }
+  function multiplicar() { acc = num.value;  op = "*"; }
+  function dividir() { acc = num.value;  op = "/"; }
+  function potencia() { acc = num.value;  op = "^"; }
+
+  function calcular() {
+    if (op === "+") {num.value = (+acc + +num.value)}
+    if (op === "-") {num.value = (+acc - +num.value)}
+    if (op === "*") {num.value = (+acc * +num.value)}
+    if (op === "/") {num.value = (+acc / +num.value)}
+    if (op === "^") {num.value = Math.pow(+acc, +num.value)}
+  }
+
+  function inic ()   {num = document.getElementById("num");}
+  function vaciar () {num.value = "";}
+</script>
+</head>
+<body onLoad="inic()">
+  <h1>Buenos días, bienvenido a la calculadora de Juan Carlos Gomez-Lobo</h1>
+  Número:<p>
+  <div class="">
+    <input type="text" size="12" id="num" onClick="vaciar()"><p>
+  </div>
+
+  <div class="">
+    <h2>Operaciones Binarias</h2>
+    <button onClick="mas()">+</button>
+    <button onClick="menos()">-</button>
+    <button onClick="multiplicar()">*</button>
+    <button onClick="dividir()">/</button>    
+    <button onClick="potencia()">x^y</button>
+    <button onClick="calcular()">=</button>
+  </div>
+
+  <div class="">
+    <h2>Operaciones Unitarias</h2>
+    <button onClick="cuadrado()">x^2</button>
+    <button onClick="inverso()">1/x</button>
+    <button onClick="raiz()">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCAAZABkDAREAAhEBAxEB/8QAGgAAAgIDAAAAAAAAAAAAAAAAAAUCBAMGCP/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAeqRURLBqQ0Lo7EhfMQxAAA//8QAHRAAAgMAAgMAAAAAAAAAAAAABAUAAgMBFBUWIP/aAAgBAQABBQKassciPJ0ncrPZ+RGQ2BYaxSw5aiw9OIzIJFoXUMDED6//xAAUEQEAAAAAAAAAAAAAAAAAAABA/9oACAEDAQE/AQf/xAAUEQEAAAAAAAAAAAAAAAAAAABA/9oACAECAQE/AQf/xAAtEAACAQMCAwQLAAAAAAAAAAABAgMABBESYSEiUQUQMZMTFCAyM1JxgZHR8P/aAAgBAQAGPwKmgxI8igMwjjLYznHh9K+FceQ36r3JfKNXNn2lbLaNHB6xE8chkEyjxxyjmHDhvUsqxJJ2jNmZ0Z8Lr+XOwAX7Ul2qhbaVQ0XHmI36d1nNcRa5LST0sR6HH9+BQWTVozkqGwG2PUbVIIQyrI5cqWJAJOTjpxJ9r//EACIQAQACAQMDBQAAAAAAAAAAAAERIQBBUWEQMXEgkcHR8P/aAAgBAQABPyHKRPy3uERqr7Oj7978YLQR20hkvkVwjrJakEQjRJiwrrk6f/kwt08C+bYMNd5vo9uzG+xjvISNQSnc4OuGtAxIQFoog39X/9oADAMBAAIAAwAAABCQCQSASST/xAAUEQEAAAAAAAAAAAAAAAAAAABA/9oACAEDAQE/EAf/xAAUEQEAAAAAAAAAAAAAAAAAAABA/9oACAECAQE/EAf/xAAcEAEBAAIDAQEAAAAAAAAAAAABESExABBBIHH/2gAIAQEAAT8Q5JgqWsUIX3UAUBHp1bi2ikMOCAkgJSLLr04N+MU4RVwOCvQREZFQFQFQnXcZUYd4dtOcZzcOSv31uAIrstABKNTkVdz4QIhX5A+f/9k=">
+    </button>
+
+    <button onClick="parte_entera()">parte_entera()</button>
+
+
+  </div>
+
+  </p>
+</body>
+</html>
