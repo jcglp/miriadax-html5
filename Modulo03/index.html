@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Date</title>
+
+    <style media="screen">
+      .respuesta{
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="h1">Juan Carlos Gomez-Lobo</h1>
+    <h2 id="h2">La fecha y la hora son:</h2>
+    <div id="fecha"></div>
+
+    <ol type="a">
+
+      <li>Contenido de innerHTML de elemento identificado por id="h2"
+        <div id="a" class="respuesta"></div>
+      </li>
+
+      <li>Contenido de outerHTML de elemento identificado por id="h1"
+        <div id="b" class="respuesta"></div>
+      </li>
+
+      <li>Contenido de de la propiedad global: location.href
+        <div id="c" class="respuesta"></div>
+      </li>
+
+      <li>Contenido de de la propiedad global: location
+        <div id="d" class="respuesta"></div>
+      </li>
+
+      <li>Contenido de de las propiedades globales: screen.width y screen.heigth
+        <div id="e" class="respuesta"></div>
+      </li>
+
+
+
+    </ol>
+
+
+
+
+
+    <script type="text/javascript">
+
+    function escapeHTML(cadena) {
+        return cadena.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+      var fecha = new Date();
+      var msj;
+
+      if      (fecha.getHours() < 7)  { msj = "Buenas noches";}
+      else if (fecha.getHours() < 12) { msj = "Buenos días";}
+      else if (fecha.getHours() < 21) { msj = "Buenas tardes";}
+      else                                          { msj = "Buenas noches";}
+
+      document.getElementById("h1").innerHTML    = msj;
+      document.getElementById("fecha").innerHTML = fecha;
+
+      document.getElementById("a").innerHTML = document.getElementById("h2").innerHTML;
+      document.getElementById("b").innerHTML = escapeHTML( document.getElementById("h1").outerHTML );
+
+      document.getElementById("c").innerHTML = location.href;
+
+      document.getElementById("d").innerHTML = location;
+
+      document.getElementById("e").innerHTML = "width:" + screen.width + " height:"+ screen.height;
+
+    </script>
+
+  </body>
+</html>

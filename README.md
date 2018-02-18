@@ -5,7 +5,10 @@ https://miriadax.net/web/html5mooc
 
 
 Practica 1
-https://jcglp.github.io/miriadax-html5/Modulo01/index.html
+https://jcglp.github.io/miriadax-html5/Modulo01/
 
 Practica 2
-https://jcglp.github.io/miriadax-html5/Modulo02/index.html
+https://jcglp.github.io/miriadax-html5/Modulo02/
+
+Practica 3
+https://jcglp.github.io/miriadax-html5/Modulo03/
