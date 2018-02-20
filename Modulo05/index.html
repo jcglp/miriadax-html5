@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculador JQuery</title>
+<meta charset="utf-8">
+  <script  src="http://code.jquery.com/jquery-2.2.4.min.js"  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+
+
+  <script type="text/javascript">
+
+    $(function(){
+      var numero = $("#caja");
+      numero.on("click", function(){  numero.val(''); });
+
+      var acc = 0, op = "";
+
+
+      $(".opebin").on("click", function(){
+        acc = numero.val();
+        op = $(this).data("operacion");
+
+      });
+      $("#calcular").on("click", function() {
+                                  var resultado = 0;
+                                  if (op === "+") {resultado = (+acc + +numero.val())}
+                                  if (op === "-") {resultado = (+acc - +numero.val())}
+                                  if (op === "*") {resultado = (+acc * +numero.val())}
+                                  if (op === "/") {resultado = (+acc / +numero.val())}
+                                  if (op === "^") {resultado = Math.pow(+acc, +numero.val())}
+
+                                  numero.val(resultado);
+                                });
+
+
+      $("#cuadrado").on("click", function(){ numero.val( numero.val() * numero.val() ) });
+
+      $("#inverso").on("click", function(){ numero.val( 1 / numero.val() ) });
+
+      $("#raiz").on("click", function(){ numero.val( Math.sqrt(numero.val() ) ) });
+
+      $("#parte-entera").on("click", function()   {
+                              if ( 1===Math.sign( numero.val() ) ) {
+                                numero.val( Math.floor( numero.val() ) ) ;
+
+                              } else {
+                                numero.val( Math.ceil( numero.val() ) ) ;
+
+                              }
+
+                            });
+
+      $("#potencia-2").on("click", function(){
+                              numero.val( Math.pow(2, numero.val() ) );
+
+                          });
+
+      $("#factorial").on("click", function(){
+                              var aux = 1;
+                              var num = numero.val();
+                              while (num > 0){
+                                aux *=  num;
+                                num--;
+                              }
+                              numero.val( aux );
+
+                          });
+
+      $("#suma-csv").on("click", function(){
+                            valores = numero.val().split(',');
+                            aux = 0;
+                            for (i=0; i<valores.length; i++) {
+                              aux += +valores[i];
+                            }
+                            numero.val( aux );
+                          });
+      $("#producto-csv").on("click", function(){
+                            valores = numero.val().split(',');
+                            aux = 1;
+                            for (i=0; i<valores.length; i++) {
+                              aux *= +valores[i];
+                            }
+                            numero.val( aux );
+                          });
+
+
+
+    });
+
+
+
+
+
+
+  function menos() { acc = num.value;  op = "-"; }
+  function multiplicar() { acc = num.value;  op = "*"; }
+  function dividir() { acc = num.value;  op = "/"; }
+  function potencia() { acc = num.value;  op = "^"; }
+
+
+
+</script>
+
+
+
+</head>
+<body>
+  <h1>Buenos días, bienvenido a la calculadora de Juan Carlos Gomez-Lobo</h1>
+  <h2>Version 2. JQuery</h2>
+  Número:<p>
+  <div class="">
+    <input type="text" size="12" id="caja"><p>
+  </div>
+
+  <div class="">
+    <h2>Operaciones Binarias</h2>
+    <button class="opebin" id="mas" data-operacion="+">+</button>
+    <button class="opebin" id="menos" data-operacion="-">-</button>
+    <button class="opebin" id="multiplicar" data-operacion="*">*</button>
+    <button class="opebin" id="dividir" data-operacion="/">/</button>
+    <button class="opebin" id="potencia" data-operacion="^">^</button>
+
+
+    <button id="calcular">=</button>
+  </div>
+
+  <div class="">
+    <h2>Operaciones Unitarias</h2>
+    <button id="cuadrado">x^2</button>
+    <button id="inverso">1/x</button>
+    <button id="raiz">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCAAZABkDAREAAhEBAxEB/8QAGgAAAgIDAAAAAAAAAAAAAAAAAAUCBAMGCP/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAeqRURLBqQ0Lo7EhfMQxAAA//8QAHRAAAgMAAgMAAAAAAAAAAAAABAUAAgMBFBUWIP/aAAgBAQABBQKassciPJ0ncrPZ+RGQ2BYaxSw5aiw9OIzIJFoXUMDED6//xAAUEQEAAAAAAAAAAAAAAAAAAABA/9oACAEDAQE/AQf/xAAUEQEAAAAAAAAAAAAAAAAAAABA/9oACAECAQE/AQf/xAAtEAACAQMCAwQLAAAAAAAAAAABAgMABBESYSEiUQUQMZMTFCAyM1JxgZHR8P/aAAgBAQAGPwKmgxI8igMwjjLYznHh9K+FceQ36r3JfKNXNn2lbLaNHB6xE8chkEyjxxyjmHDhvUsqxJJ2jNmZ0Z8Lr+XOwAX7Ul2qhbaVQ0XHmI36d1nNcRa5LST0sR6HH9+BQWTVozkqGwG2PUbVIIQyrI5cqWJAJOTjpxJ9r//EACIQAQACAQMDBQAAAAAAAAAAAAERIQBBUWEQMXEgkcHR8P/aAAgBAQABPyHKRPy3uERqr7Oj7978YLQR20hkvkVwjrJakEQjRJiwrrk6f/kwt08C+bYMNd5vo9uzG+xjvISNQSnc4OuGtAxIQFoog39X/9oADAMBAAIAAwAAABCQCQSASST/xAAUEQEAAAAAAAAAAAAAAAAAAABA/9oACAEDAQE/EAf/xAAUEQEAAAAAAAAAAAAAAAAAAABA/9oACAECAQE/EAf/xAAcEAEBAAIDAQEAAAAAAAAAAAABESExABBBIHH/2gAIAQEAAT8Q5JgqWsUIX3UAUBHp1bi2ikMOCAkgJSLLr04N+MU4RVwOCvQREZFQFQFQnXcZUYd4dtOcZzcOSv31uAIrstABKNTkVdz4QIhX5A+f/9k=">
+    </button>
+    <button id="parte-entera">parte_entera()</button>
+    <button id="potencia-2">2^n</button>
+    <button id="factorial">n!</button>
+
+
+  </div>
+
+  <div class="">
+    <h2>Operaciones con n operandos introducidos en formato CSV</h2>
+    <button id="suma-csv">Sumatorio</button>
+    <button id="producto-csv">Productos</button>
+
+  </div>
+
+  </p>
+</body>
+</html>
