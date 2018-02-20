@@ -14,7 +14,7 @@ Practica 3
 https://jcglp.github.io/miriadax-html5/Modulo03/
 
 Practica 4
-https://jcglp.github.io/miriadax-html5/Modulo04/
+https://jcglp.github.io/miriadax-html5/Modulo04/index.html
 
 Practica 5
-https://jcglp.github.io/miriadax-html5/Modulo05/
+https://jcglp.github.io/miriadax-html5/Modulo05/index.html
