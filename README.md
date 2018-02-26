@@ -18,3 +18,6 @@ https://jcglp.github.io/miriadax-html5/Modulo04/index.html
 
 Practica 5
 https://jcglp.github.io/miriadax-html5/Modulo05/index.html
+
+Practica 6
+https://jcglp.github.io/miriadax-html5/Modulo06/index.html
