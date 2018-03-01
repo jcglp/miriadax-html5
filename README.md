@@ -29,4 +29,7 @@ Practica 8(Opcional)
 https://jcglp.github.io/miriadax-html5/Modulo08/p2popcional.html
 
 Practica 8
-https://jcglp.github.io/miriadax-html5/Modulo08/index.html
+https://jcglp.github.io/miriadax-html5/Modulo08/
+
+Practica 9(Opcional)
+https://jcglp.github.io/miriadax-html5/Modulo09/p2popcional.html
